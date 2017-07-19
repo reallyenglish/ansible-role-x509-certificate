@@ -2,8 +2,8 @@
   roles:
     - ansible-role-x509-certificate
   vars:
-    # XXX NEVER set this variable to `no` unless you know what you are doing.
-    x509_certificate_disable_log: no
+    # XXX NEVER set this variable to `yes` unless you know what you are doing.
+    x509_certificate_debug_log: yes
 
     x509_certificate_additional_packages:
       - quagga

@@ -20,7 +20,7 @@ None
 | `x509_certificate_validate_command_secret` | dict of command to validate secret key (see below) | `{"openssl"=>"openssl rsa -check -in %s"}` |
 | `x509_certificate_validate_command_public` | dict of command to validate public key (see below) | `{"openssl"=>"openssl x509 -noout -in %s"}` |
 | `x509_certificate` | keys to manage (see below) | `[]` |
-| `x509_certificate_disable_log` | disable logging of sensitive data during the play if `yes`. note that the log will display the value of `x509_certificate`, including secret key, if `no` | `yes` |
+| `x509_certificate_debug_log` | enable logging of sensitive data during the play if `yes`. note that the log will display the value of `x509_certificate`, including secret key, if `yes` | `no` |
 
 ## `x509_certificate_validate_command_secret`
 
@@ -75,8 +75,8 @@ None
   roles:
     - ansible-role-x509-certificate
   vars:
-    # XXX NEVER set this variable to `no` unless you know what you are doing.
-    x509_certificate_disable_log: no
+    # XXX NEVER set this variable to `yes` unless you know what you are doing.
+    x509_certificate_debug_log: yes
 
     x509_certificate_additional_packages:
       - quagga
